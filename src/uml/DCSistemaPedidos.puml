@@ -1,0 +1,31 @@
+@startuml
+class Usuario{
+- idUsuario : String
+- nombreUsuario : String
+- email : String
+--
++ registrarUsuario(): String
++ validarIdentidad(): boolean
+}
+
+class Producto{
+- idProducto : String
+- nombreProducto : String
+- precioProducto : double
+--
++ consultarProductos(): String
+}
+
+class Orden{
+- id : String
+- idUsuario : String
+- idProducto : String
+- cantidad : Integer
+- fechaDeOrden : Date
+--
++ crearOrden() : String
++ obtenerHistoria() : String
+}
+Usuario "1" -- "0..*" Orden : realiza >
+Producto "1" -- "0..*" Orden : contiene <
+@enduml

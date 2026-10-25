@@ -1,0 +1,18 @@
+@startuml
+start 
+
+:Consultar el catalogo de productos;
+:Seleccionar un producto y especificar cantidad;
+:Confirmar pedido;
+
+if (El usuario es valido?) then (SI)
+    :Generar registro en "orden";
+    :Asignar fecha e id de pedido;
+    :Confirmar pedido;
+else (NO)
+    :Mostrar error de validacion;
+endif
+
+stop
+
+@enduml
